@@ -13,17 +13,22 @@ export class PulumiSearchHeader {
 
     render() {
         return (
-            <div>
+            <div class="search-container">
                 <div class="search-header container flex">
                     <div class="header-pinned-container hidden md:flex xl:w-3/12 px-4 lg:px-8 xl:px-5">
-                        <div class="header-hero-title pr-3">
-                            <div class="flex items-center">
-                                <a href="">
-                                    <i class="fas fa-book title-icon"></i>
+                        <div class="flex">
+                            <div class="flex tabs">
+                                <a class="tab-selected">
+                                    <i class="fas fa-book-open tab-icon"></i>
+                                    Docs
                                 </a>
-                                <a href="">
+                                <a class="tab" href="/registry">
+                                    <i class="fas fa-archive tab-icon"></i>
+                                    Registry
+                                </a>
+                                {/* <a href="">
                                     <span class="title-text-content">{this.mode === "docs" ? "Pulumi Docs" : "Pulumi Registry"}</span>
-                                </a>
+                                </a> */}
                             </div>
                         </div>
                         <div class="header-pinned items-center transition-all hidden">
@@ -33,7 +38,7 @@ export class PulumiSearchHeader {
                             </div>
                         </div>
                     </div>
-                    <div id="search-container" class="search-container bg-white mt-4 md:mt-0 flex justify-center lg:ml-6">
+                    <div id="search-container" class="search-container bg-white mt-4 md:mt-0 flex justify-center lg:ml-6 py-2">
                         <div id="search-form" class="search-widget text-gray-600 focus-within:text-gray-700">
                             <form class="relative flex">
                                 <i class="fas fa-search absolute inset-y-0 flex items-center pl-3"></i>
@@ -41,6 +46,16 @@ export class PulumiSearchHeader {
                                 <button type="submit" class="hidden md:block bg-blue-600 font-display font-normal text-lg text-white p-1.5 px-4 rounded-r">Search</button>
                             </form>
                             <div id="search-results" class="relative"></div>
+                        </div>
+                    </div>
+                    <div class="feedback">
+                        <div class="header-hero-title pr-3">
+                            <div class="flex items-center tabs">
+                                <a class="tab">
+                                    <i class="fas fa-comment tab-icon"></i>
+                                    Feedback
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
