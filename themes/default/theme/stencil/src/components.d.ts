@@ -154,6 +154,9 @@ export namespace Components {
     }
     interface PulumiRoot {
     }
+    interface PulumiSearchHeader {
+        "mode": string;
+    }
     interface PulumiSlotMachine {
         "centerImages": string;
         "imageClass": string;
@@ -372,6 +375,12 @@ declare global {
         prototype: HTMLPulumiRootElement;
         new (): HTMLPulumiRootElement;
     };
+    interface HTMLPulumiSearchHeaderElement extends Components.PulumiSearchHeader, HTMLStencilElement {
+    }
+    var HTMLPulumiSearchHeaderElement: {
+        prototype: HTMLPulumiSearchHeaderElement;
+        new (): HTMLPulumiSearchHeaderElement;
+    };
     interface HTMLPulumiSlotMachineElement extends Components.PulumiSlotMachine, HTMLStencilElement {
     }
     var HTMLPulumiSlotMachineElement: {
@@ -461,6 +470,7 @@ declare global {
         "pulumi-registry-list-search": HTMLPulumiRegistryListSearchElement;
         "pulumi-resource-links": HTMLPulumiResourceLinksElement;
         "pulumi-root": HTMLPulumiRootElement;
+        "pulumi-search-header": HTMLPulumiSearchHeaderElement;
         "pulumi-slot-machine": HTMLPulumiSlotMachineElement;
         "pulumi-swipeable": HTMLPulumiSwipeableElement;
         "pulumi-swiper": HTMLPulumiSwiperElement;
@@ -613,6 +623,9 @@ declare namespace LocalJSX {
     interface PulumiRoot {
         "onRendered"?: (event: CustomEvent<any>) => void;
     }
+    interface PulumiSearchHeader {
+        "mode"?: string;
+    }
     interface PulumiSlotMachine {
         "centerImages"?: string;
         "imageClass"?: string;
@@ -687,6 +700,7 @@ declare namespace LocalJSX {
         "pulumi-registry-list-search": PulumiRegistryListSearch;
         "pulumi-resource-links": PulumiResourceLinks;
         "pulumi-root": PulumiRoot;
+        "pulumi-search-header": PulumiSearchHeader;
         "pulumi-slot-machine": PulumiSlotMachine;
         "pulumi-swipeable": PulumiSwipeable;
         "pulumi-swiper": PulumiSwiper;
@@ -731,6 +745,7 @@ declare module "@stencil/core" {
             "pulumi-registry-list-search": LocalJSX.PulumiRegistryListSearch & JSXBase.HTMLAttributes<HTMLPulumiRegistryListSearchElement>;
             "pulumi-resource-links": LocalJSX.PulumiResourceLinks & JSXBase.HTMLAttributes<HTMLPulumiResourceLinksElement>;
             "pulumi-root": LocalJSX.PulumiRoot & JSXBase.HTMLAttributes<HTMLPulumiRootElement>;
+            "pulumi-search-header": LocalJSX.PulumiSearchHeader & JSXBase.HTMLAttributes<HTMLPulumiSearchHeaderElement>;
             "pulumi-slot-machine": LocalJSX.PulumiSlotMachine & JSXBase.HTMLAttributes<HTMLPulumiSlotMachineElement>;
             "pulumi-swipeable": LocalJSX.PulumiSwipeable & JSXBase.HTMLAttributes<HTMLPulumiSwipeableElement>;
             "pulumi-swiper": LocalJSX.PulumiSwiper & JSXBase.HTMLAttributes<HTMLPulumiSwiperElement>;
