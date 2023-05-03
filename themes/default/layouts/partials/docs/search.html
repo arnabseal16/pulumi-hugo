@@ -15,33 +15,59 @@
 
     _st("install", "xxxQB1LC9DE212h8eJmh", "2.0.0");
 </script>
-<div class="search-header container flex">
-    <div class="header-pinned-container hidden md:flex xl:w-3/12 px-4 lg:px-8 xl:px-5">
-        <div class="header-hero-title pr-3">
-            <div class="flex items-center">
-                <a href="{{ relref . " /docs" }}">
-                    <i class="fas fa-book title-icon"></i>
-                </a>
-                <a href="{{ relref . " /docs" }}">
-                    <span class="title-text-content">Pulumi Docs</span>
-                </a>
+<div class="search-container">
+    <div class="search-header container flex">
+        <div class=" hidden md:flex xl:w-3/12 px-4 lg:px-8 xl:px-5">
+            <div class="flex">
+                <div class="flex tabs">
+                    {{ $mode := .Scratch.Get "mode" }}
+                    {{ if eq "docs" $mode }}
+                        <a class="tab-selected" href="/docs">
+                            <i class="fas fa-book-open tab-icon"></i>
+                            Docs
+                        </a>
+                        <a class="tab" href="/registry">
+                            <i class="fas fa-archive tab-icon"></i>
+                            Registry
+                        </a>
+                    {{ else }}
+                        <a class="tab" href="/docs">
+                            <i class="fas fa-book-open tab-icon"></i>
+                            Docs
+                        </a>
+                        <a class="tab-selected" href="/registry">
+                            <i class="fas fa-archive tab-icon"></i>
+                            Registry
+                        </a>
+                    {{ end }}
+                </div>
+            </div>
+            <div class=" items-center transition-all hidden">
+                <img class="h-6 mr-12" src="/images/logo/logo-on-white.svg" alt="Pulumi logo" />
+                <div class="get-started-pinned-search-container">
+                    <a class="get-started-pinned-search-button" data-track="get-started-pinned-search" href="">Get Started</a>
+                </div>
             </div>
         </div>
-        <div class="header-pinned items-center transition-all hidden">
-            <img class="h-6 mr-12" src="/images/logo/logo-on-white.svg" alt="Pulumi logo" />
-            <div class="get-started-pinned-search-container">
-                <a class="get-started-pinned-search-button" data-track="get-started-pinned-search" href="{{ relref . " /docs/get-started" }}">Get Started</a>
+        <div id="search-container" class="search-container bg-white mt-4 md:mt-0 flex justify-center lg:ml-6 py-2">
+            <div id="search-form" class="search-widget text-gray-600 focus-within:text-gray-700">
+                <form class="relative flex">
+                    <i class="fas fa-search absolute inset-y-0 flex items-center pl-3"></i>
+                    <input id="search-query" type="text" class="st-default-search-input docs text-sm transition" placeholder="Search..." />
+                    <button type="submit" class="hidden md:block bg-blue-600 font-display font-normal text-lg text-white p-1.5 px-4 rounded-r">Search</button>
+                </form>
+                <div id="search-results" class="relative"></div>
             </div>
         </div>
-    </div>
-    <div id="search-container" class="search-container bg-white mt-4 md:mt-0 flex justify-center lg:ml-6">
-        <div id="search-form" class="search-widget text-gray-600 focus-within:text-gray-700">
-            <form class="relative flex">
-                <i class="fas fa-search absolute inset-y-0 flex items-center pl-3" style="color: inherit"></i>
-                <input id="search-query" type="text" class="st-default-search-input docs text-sm transition" placeholder="Search..." />
-                <button type="submit" class="hidden md:block bg-blue-600 font-display font-normal text-lg text-white p-1.5 px-4 rounded-r">Search</button>
-            </form>
-            <div id="search-results" class="relative"></div>
+        <div class="flex feedback">
+            <div class="header-hero-title pr-3">
+                <div class="flex items-center tabs">
+                    <a class="tab">
+                        <i class="fas fa-comment tab-icon"></i>
+                        Feedback
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

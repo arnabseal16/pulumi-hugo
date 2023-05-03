@@ -18,11 +18,11 @@ export class PulumiSearchHeader {
                     <div class="header-pinned-container hidden md:flex xl:w-3/12 px-4 lg:px-8 xl:px-5">
                         <div class="flex">
                             <div class="flex tabs">
-                                <a class="tab-selected">
+                                <a class={this.mode === "docs" ? "tab-selected" : "tab"} href="/docs">
                                     <i class="fas fa-book-open tab-icon"></i>
                                     Docs
                                 </a>
-                                <a class="tab" href="/registry">
+                                <a class={this.mode === "docs" ? "tab" : "tab-selected"} href="/registry">
                                     <i class="fas fa-archive tab-icon"></i>
                                     Registry
                                 </a>

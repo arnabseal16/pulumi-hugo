@@ -2,8 +2,9 @@
     {{ partial "top-nav" . }}
     <div class="header-container docs-hero">
         <span class="hide-on-pinned"> </span>
-        <!-- {{ partial "docs/search.html" . }} -->
-        <script>
+        {{ .Scratch.Set "mode" "docs" }}
+        {{ partial "docs/search.html" . }}
+        <!-- <script>
             (function (w, d, t, u, n, s, e) {
                 w["SwiftypeObject"] = n;
                 w[n] =
@@ -20,7 +21,7 @@
 
             _st("install", "xxxQB1LC9DE212h8eJmh", "2.0.0");
         </script>
-        <pulumi-search-header mode="docs"></pulumi-search-header>
+        <pulumi-search-header mode="docs"></pulumi-search-header> -->
     </div>
 {{ else }}
     <nav class="top-nav-bar transition-all">
